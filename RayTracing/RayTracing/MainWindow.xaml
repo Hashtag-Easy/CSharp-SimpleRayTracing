@@ -3,7 +3,6 @@
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-  xmlns:local="clr-namespace:RayTracing"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   Title="MainWindow"
   Width="1600"
@@ -12,18 +11,17 @@
   mc:Ignorable="d">
   <Window.Resources>
     <ResourceDictionary>
-      <Color x:Key="DarkGray">#222222</Color>
       <SolidColorBrush x:Key="CanvasColor" Color="{StaticResource DarkGray}" />
       <Style x:Key="MainCanvas" TargetType="Canvas">
         <Setter Property="Width" Value="1600" />
         <Setter Property="Height" Value="900" />
-        <Setter Property="Background" Value="{DynamicResource CanvasColor}" />
+        <Setter Property="Background" Value="{StaticResource CanvasColor}" />
       </Style>
     </ResourceDictionary>
   </Window.Resources>
 
   <Window.Content>
-    <Canvas Style="{StaticResource MainCanvas}" />
+    <Canvas x:Name="MainCanvas" Style="{StaticResource MainCanvas}" />
   </Window.Content>
 
 </Window>
